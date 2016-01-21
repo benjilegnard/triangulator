@@ -1,0 +1,25 @@
+{
+  "name": "triangulator",
+  "version": "1.0.0",
+  "description": "An image to svg converter using delaunay triangulation.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron main.js",
+    "install":"npm install --save-dev gulp babel-cli babel-core babel-eslint babel-preset-es2015 browserify electron-prebuilt electron-packager chai mocha babel-preset-react del electron-rebuild gulp-sass"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jibhaine/triangulator.git"
+  },
+  "author": "jibhaine",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jibhaine/triangulator/issues"
+  },
+  "homepage": "https://github.com/jibhaine/triangulator#readme",
+  "dependencies": {
+    "delaunay-fast": "^1.0.1",
+    "react": "^0.14.6",
+    "svgexport": "^0.2.8"
+  }
+}
