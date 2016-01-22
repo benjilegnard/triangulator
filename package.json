@@ -4,8 +4,7 @@
   "description": "An image to svg converter using delaunay triangulation.",
   "main": "main.js",
   "scripts": {
-    "start": "electron main.js",
-    "install":"npm install --save-dev gulp babel-cli babel-core babel-eslint babel-preset-es2015 browserify electron-prebuilt electron-packager chai mocha babel-preset-react del electron-rebuild gulp-sass"
+    "start": "electron main.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +19,33 @@
   "dependencies": {
     "delaunay-fast": "^1.0.1",
     "react": "^0.14.6",
+    "react-redux": "^4.0.6",
+    "redux": "^3.0.5",
+    "redux-logger": "^2.4.0",
     "svgexport": "^0.2.8"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.4.5",
+    "babel-core": "^6.4.5",
+    "babel-eslint": "^4.1.6",
+    "babel-preset-es2015": "^6.3.13",
+    "babelify": "^7.2.0",
+    "browserify": "^13.0.0",
+    "chai": "^3.4.1",
+    "del": "^2.2.0",
+    "electron-connect": "^0.3.5",
+    "electron-prebuilt": "^0.36.4",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-cssnano": "^2.1.0",
+    "gulp-htmlmin": "^1.3.0",
+    "gulp-if": "^2.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.1.1",
+    "gulp-useref": "^3.0.4",
+    "mocha": "^2.3.4",
+    "react-dom": "^0.14.6",
+    "redux-devtools": "^3.0.1",
+    "watchify": "^3.7.0"
   }
 }
