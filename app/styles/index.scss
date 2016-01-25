@@ -1,0 +1,48 @@
+$mainColor:'#333';
+$textColor:'white';
+
+$defaultBorder:2rem;
+$fontFamily:'',sans-serif;
+
+@mixin sidebar(){
+
+}
+
+@mixin document(){
+
+}
+
+@mixin panels(){
+
+}
+
+body,html{
+  background-color: $mainColor;
+}
+#root{
+
+}
+#document{
+
+  svg{
+    &#control{
+
+    }
+    &#render{
+
+    }
+  }
+  canvas{
+
+  }
+
+}
+#toolbar{
+  ul{
+
+  }
+
+  li{
+
+  }
+}
