@@ -1,26 +1,17 @@
 import React, { PropTypes } from 'react'
 import { render } from 'react-dom'
-import { createStore } from 'redux'
+import configureStore  from './store/configureStore'
 import { Provider, connect } from 'react-redux'
-
-import Root from './containers/Root';
+import DevTools from './containers/DevTools'
+import Root from './containers/Root'
 
 const initialState = {
     triangles:[],
     points:[],
     documents:[]
 };
-const reducer = (state = [], action)=>{
 
-
-    switch (action.type) {
-        case 'ADD_TODO':
-            return state.concat([ action.text ]);
-        default:
-            return state
-    }
-}
-const store = createStore( reducer, initialState);
+const store = configureStore(initialState);
 
 render(
     <Root store={store}/>,
