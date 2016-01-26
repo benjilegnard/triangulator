@@ -12,13 +12,13 @@ const electron = require('electron-connect').server.create();
 const source = require('vinyl-source-stream');
 const babelify = require('babelify');
 const watchify = require('watchify');
-const reactify = require('reactify');
 const browserify = require('browserify');
 const del = require('del');
 
 const paths = {
     src:'./app',
     js:'./app/*.js',
+    html:'./app/*.html',
     css:'./app/styles/index.scss',
     dest:'./dist',
     conf:'./data'
@@ -64,6 +64,12 @@ gulp.task('css', function(){
      .pipe(gulp.dest(paths.dest+'/css'));
 });
 
+gulp.task('html', function(){
+    return gulp.src(paths.html)
+        .pipe(useref())
+        .pipe(gulp.dest(paths.dest+'/'));
+});
+
 // Rerun tasks whenever a file changes.
 gulp.task('watch',['js-watch'] ,function() {
     // Start browser process
@@ -73,7 +79,7 @@ gulp.task('watch',['js-watch'] ,function() {
     gulp.watch('main.js', electron.restart);
 
     // Reload renderer process
-    gulp.watch([paths.js, 'index.html'], electron.reload);
+    gulp.watch([paths.dest + '/bundle.js', 'index.html'], electron.reload);
 
     gulp.watch(paths.css, ['css']);
     //gulp.watch(paths.js, ['js']);
