@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
-import { Provider } from 'react-redux'
-//import { ReduxRouter } from 'redux-router'
+import { Provider, connect } from 'react-redux'
+//import { ReduxRouter } from 'redux-router''
 import DevTools from './DevTools'
 import Document from './Document'
 import ToolBar from './ToolBar'
@@ -16,7 +16,6 @@ export default class Root extends Component {
                         <ToolBar/>
                     </nav>
                     <main>
-
                         <Document
                             triangles={store.triangles}
                             points={store.points}
@@ -32,4 +31,8 @@ export default class Root extends Component {
 
 Root.propTypes = {
     store: PropTypes.object.isRequired
+}
+
+function mapStateToProps(state) {
+
 }
