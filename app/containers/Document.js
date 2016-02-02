@@ -3,7 +3,24 @@ import Svg from '../containers/Svg'
 import Image from '../containers/Image'
 import ControlPoints from '../containers/ControlPoints'
 
-export default class Document extends Component {
+class Document extends Component {
+    renderErrorMessage() {
+        const { errorMessage } = this.props
+        if (!errorMessage) {
+            return null
+        }
+
+        return (
+            <p style={{ backgroundColor: '#e99', padding: 10 }}>
+                <b>{errorMessage}</b>
+                {' '}
+                (<a href="#"
+                    onClick={this.handleDismissClick}>
+                Dismiss
+            </a>)
+            </p>
+        )
+    }
     render() {
         const {triangles,points} = this.props;
     return (
@@ -11,6 +28,7 @@ export default class Document extends Component {
             <Image/>
             <Svg>{triangles}</Svg>
             <ControlPoints>{points}</ControlPoints>
+            {this.renderErrorMessage()}
         </div>
         )
     }

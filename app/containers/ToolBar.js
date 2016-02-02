@@ -14,5 +14,5 @@ export default class ToolBar extends Component{
 }
 
 ToolBar.propTypes = {
-  tools:PropTypes.array
+  tools : PropTypes.array
 };

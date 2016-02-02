@@ -1,8 +1,9 @@
 import * as types from '../constants/ActionTypes'
 
-
 export function selectTool(tool){
-
+    return {
+        type: types.TOOL_SELECT
+    }
 }
 
 export function loadImage(image){
@@ -12,7 +13,7 @@ export function loadImage(image){
 }
 export function deleteImage(image){
     return {
-        type: types.IMAGE_LOAD
+        type: types.IMAGE_DELETE
     }
 }
 export function blurImage(image){
@@ -58,6 +59,5 @@ export function closePanel(id){
     return {
         type: types.PANEL_CLOSE,
         id
-
     }
 }
